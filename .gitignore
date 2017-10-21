@@ -1,1 +1,9 @@
 *.class
+/Apps/.vs/Marys_Place_Uploader/v15/Server/sqlite3/db.lock
+/Apps/.vs/Marys_Place_Uploader/v15/Server/sqlite3/storage.ide-shm
+/Apps/.vs/Marys_Place_Uploader/v15/Server/sqlite3/storage.ide
+/Apps/.vs/Marys_Place_Uploader/v15/Server/sqlite3/storage.ide-wal
+/Apps/Marys_Place_Uploader/bin/Debug/Marys_Place_Uploader.exe
+/Apps/Marys_Place_Uploader/bin/Debug/Marys_Place_Uploader.exe.config
+/Apps/Marys_Place_Uploader/bin/Debug/Marys_Place_Uploader.pdb
+/Apps/Marys_Place_Uploader/obj/Debug
