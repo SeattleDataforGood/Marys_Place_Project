@@ -28,23 +28,17 @@ namespace Marys_Place_Uploader
 
         private void Start_Upload_Click(object sender, RoutedEventArgs e)
         {
-            string connetionString = null;
+            string connectionString = null;
             SqlConnection cnn;
-            connetionString = $"Server=tcp:test-server-1-mml.database.windows.net,1433;Initial Catalog=test-db-1;Persist Security Info=False;User ID={AzureDBUserName.Text};Password={AzureDBPassword.Password}";
-            cnn = new SqlConnection(connetionString);
+            connectionString = $"Server=tcp:{ServerName.Text},1433;Initial Catalog={DatabaseName.Text};Persist Security Info=False;User ID={AzureDBUserName.Text};Password={AzureDBPassword.Password}";
+            cnn = new SqlConnection(connectionString);
             try {
                 cnn.Open();
-                MessageBox.Show("Connection Open ! ");
                 string[] lines = System.IO.File.ReadAllLines((string) FileName.Content);
 
                 foreach (string line in lines)
                 {
-                    // Use a tab to indent each line of the file.
-                    Console.WriteLine("\t" + line);
-
                     char[] delimiterChars = { ',',';', '\t' };
-
-                 
 
                     string[] fields = line.Split(delimiterChars);
 
@@ -54,7 +48,6 @@ namespace Marys_Place_Uploader
                     foreach (string f in fields)
                     {
                         cmd.Parameters.AddWithValue("@"+i, f);
-                        
 
                         System.Console.WriteLine(f);
                         i++;
@@ -68,11 +61,6 @@ namespace Marys_Place_Uploader
             catch (Exception ex) {
                 MessageBox.Show("Can not open connection ! ");
             }
-        }
-
-        private void Window_Activated(object sender, EventArgs e)
-        {
-        
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

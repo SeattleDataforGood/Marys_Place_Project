@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Marys_Place_Uploader"
         mc:Ignorable="d"
-        Title="MainWindow" Height="487.282" Width="815.534" Activated="Window_Activated">
-    <Grid Margin="0,0,-245,-136">
+        Title="MainWindow" Height="487.282" Width="815.534">
+    <Grid>
         <Button x:Name="StartUpload" Content="Upload" HorizontalAlignment="Left" Margin="326,379,0,0" VerticalAlignment="Top" Width="141" Height="29" FontSize="16" FontWeight="Bold" Click="Start_Upload_Click"/>
         <TextBox x:Name="AzureDBUserName" HorizontalAlignment="Left" Height="23" Margin="271,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275"/>
         <PasswordBox x:Name="AzureDBPassword" HorizontalAlignment="Left" Height="23" Margin="257,207,0,0" VerticalAlignment="Top" Width="275"/>
