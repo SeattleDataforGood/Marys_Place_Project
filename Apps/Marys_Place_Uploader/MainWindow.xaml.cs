@@ -36,13 +36,18 @@ namespace Marys_Place_Uploader
                 cnn.Open();
                 string[] lines = System.IO.File.ReadAllLines((string) FileName.Content);
 
+                int j = 0;
                 foreach (string line in lines)
                 {
+                    j++;
+                    if (j == 1) continue;
                     char[] delimiterChars = { ',',';', '\t' };
 
                     string[] fields = line.Split(delimiterChars);
 
-                    SqlCommand cmd = new SqlCommand("insert into mp_data(shelter, move_in, move_out, moved_from, homeless_status, moved_to, departure_type) value(@0, @1, @2, @3, @4, @5, @6)");
+                    SqlCommand cmd = new SqlCommand("insert into \"mp_data$\"(shelter, move_in, move_out, moved_from, homeless_status, moved_to, departure_type) values(@0, @1, @2, @3, @4, @5, @6)");
+
+                    cmd.Connection = cnn;
 
                     int i = 0;
                     foreach (string f in fields)
@@ -54,12 +59,14 @@ namespace Marys_Place_Uploader
                     }
 
                     cmd.ExecuteNonQuery();
+                    
                 }
 
                 cnn.Close();
+                MessageBox.Show("Finished Upload");
             }
             catch (Exception ex) {
-                MessageBox.Show("Can not open connection ! ");
+                MessageBox.Show("Can not open connection ! "+ex.Message);
             }
         }
 
@@ -74,6 +81,11 @@ namespace Marys_Place_Uploader
                 string filename = dlg.FileName;
                 FileName.Content = filename;
             }
+        }
+
+        private void ServerName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

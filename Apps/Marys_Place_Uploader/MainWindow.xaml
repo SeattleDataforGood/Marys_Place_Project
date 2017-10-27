@@ -8,14 +8,14 @@
         Title="MainWindow" Height="487.282" Width="815.534">
     <Grid>
         <Button x:Name="StartUpload" Content="Upload" HorizontalAlignment="Left" Margin="326,379,0,0" VerticalAlignment="Top" Width="141" Height="29" FontSize="16" FontWeight="Bold" Click="Start_Upload_Click"/>
-        <TextBox x:Name="AzureDBUserName" HorizontalAlignment="Left" Height="23" Margin="271,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275"/>
+        <TextBox x:Name="AzureDBUserName" HorizontalAlignment="Left" Height="23" Margin="271,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Text="MarysPlaceAdmin"/>
         <PasswordBox x:Name="AzureDBPassword" HorizontalAlignment="Left" Height="23" Margin="257,207,0,0" VerticalAlignment="Top" Width="275"/>
         <Label Content="Azure DB User Name" HorizontalAlignment="Left" Margin="95,154,0,0" VerticalAlignment="Top" Width="125"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="95,204,0,0" VerticalAlignment="Top" Width="125"/>
         <Button Content="Select File" HorizontalAlignment="Left" Margin="326,259,0,0" VerticalAlignment="Top" Width="141" Height="39" FontWeight="Bold" FontSize="16" Click="Button_Click"/>
         <Label x:Name="FileName" Content="(none)"  HorizontalAlignment="Left" Margin="185,327,0,0" VerticalAlignment="Top" Width="447"/>
-        <TextBox x:Name="ServerName" HorizontalAlignment="Left" Height="23" Margin="271,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275"/>
-        <TextBox x:Name="DatabaseName" HorizontalAlignment="Left" Height="23" Margin="271,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275"/>
+        <TextBox x:Name="ServerName" HorizontalAlignment="Left" Height="23" Margin="271,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" TextChanged="ServerName_TextChanged" Text="marys-place.database.windows.net"/>
+        <TextBox x:Name="DatabaseName" HorizontalAlignment="Left" Height="23" Margin="271,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Text="MarysPlaceDB"/>
         <Label Content="Server Name" HorizontalAlignment="Left" Margin="95,64,0,0" VerticalAlignment="Top"/>
         <Label Content="DB Name" HorizontalAlignment="Left" Margin="95,105,0,0" VerticalAlignment="Top"/>
 
