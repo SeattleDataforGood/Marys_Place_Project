@@ -14,8 +14,10 @@
         <Label Content="Password" HorizontalAlignment="Left" Margin="95,204,0,0" VerticalAlignment="Top" Width="125"/>
         <Button Content="Select File" HorizontalAlignment="Left" Margin="326,259,0,0" VerticalAlignment="Top" Width="141" Height="39" FontWeight="Bold" FontSize="16" Click="Button_Click"/>
         <Label x:Name="FileName" Content="(none)"  HorizontalAlignment="Left" Margin="185,327,0,0" VerticalAlignment="Top" Width="447"/>
-        <TextBox x:Name="ServerName" HorizontalAlignment="Left" Height="23" Margin="347,64,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="DatabaseName" HorizontalAlignment="Left" Height="23" Margin="347,109,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ServerName" HorizontalAlignment="Left" Height="23" Margin="271,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275"/>
+        <TextBox x:Name="DatabaseName" HorizontalAlignment="Left" Height="23" Margin="271,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275"/>
+        <Label Content="Server Name" HorizontalAlignment="Left" Margin="95,64,0,0" VerticalAlignment="Top"/>
+        <Label Content="DB Name" HorizontalAlignment="Left" Margin="95,105,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
