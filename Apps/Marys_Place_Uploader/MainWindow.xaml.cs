@@ -21,6 +21,8 @@ namespace Marys_Place_Uploader
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly AgencyClient agencyClient = new AgencyClient();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -70,7 +72,7 @@ namespace Marys_Place_Uploader
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void SelectCsvFile_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
 
@@ -83,9 +85,24 @@ namespace Marys_Place_Uploader
             }
         }
 
-        private void ServerName_TextChanged(object sender, TextChangedEventArgs e)
+        private void AgencyLoginButton_Click(object sender, RoutedEventArgs e)
         {
+            agencyClient.Login(AgencyServer.Text, AgencyUsername.Text, AgencyPassword.Password);
+            var reports = agencyClient.GetReportList();
+            ReportList.Items.Clear();
+            foreach (var report in reports) {
+                ReportList.Items.Add(report);
+            }
+            if (reports.Count > 0)
+            {
+                ReportList.SelectedIndex = 0;
+            }
+        }
 
+        private void AgencyImportButton_Click(object sender, RoutedEventArgs e)
+        {
+            AgencyReport report = (AgencyReport)ReportList.SelectedItem;
+            agencyClient.GetReportData(report);
         }
     }
 }
